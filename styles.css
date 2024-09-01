@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fafafa;
+}
+
+a {
+  color: black;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  line-height: 1em;
+  text-decoration: none;
+  font-family: monospace;
+}
+
+li {
+  list-style: none;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 30px;
+  padding-left: 55px;
+  padding-right: 30px;
+  color: black;
+}
+
+.nav-links a {
+  color: #fff;
+}
+
+/* LOGO */
+.logo {
+  font-size: 32px;
+  font-weight: 700;
+  font: bold;
+}
+
+/* NAVBAR MENU */
+.menu {
+  display: flex;
+  gap: 1em;
+  font-size: 18px;
+}
+
+a:hover {
+  color: black;
+}
+
+.menu li {
+  padding: 5px 14px;
+}
+
+.li_clicked {
+  color: black;
+}
+
+.li_normal {
+  color: #b3b3b3;
+}
+
+.name {
+  font-family: monospace;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 22px;
+  line-height: 1.2em;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.home,
+.projects {
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.bio {
+  text-align: center;
+}
+
+.bio img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.bio h1 {
+  margin-bottom: 1rem;
+}
+
+.projects h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.project-item {
+  margin: 1rem;
+  width: 300px;
+  text-align: center;
+}
+
+.project-item img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.project-item h3 {
+  margin-bottom: 0.5rem;
+}
+
+.project-item p {
+  font-size: 0.9rem;
+  color: #666;
+}
