@@ -20,37 +20,160 @@
             class="li_normal"
             href="https://www.linkedin.com/in/tylerpezza/"
             target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn</a
           >
-            LinkedIn
-          </a>
         </li>
         <li>
-          <a class="li_normal" href="pdfs/TylerPezza-Resume.pdf" target="_blank"
+          <a
+            class="li_normal"
+            href="pdfs/TylerPezza-Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             >Resume</a
           >
         </li>
       </div>
     </nav>
 
-    <section class="projects">
-      <div class="project-list">
-        <div class="project-item">
-          <img src="project1.jpg" alt="Project 1" />
-          <h3>Project Title 1</h3>
-          <p>
-            Short description of the project. What it does, how you built it,
-            and any interesting details.
-          </p>
-        </div>
-        <div class="project-item">
-          <img src="project2.jpg" alt="Project 2" />
-          <h3>Project Title 2</h3>
-          <p>
-            Short description of the project. What it does, how you built it,
-            and any interesting details.
-          </p>
+    <div class="main-container">
+      <div class="sidebar">
+        <ul>
+          <!-- <li
+            onclick="showProject('Amba IOS App', [
+              { type: 'text', content: 'Description for Amba IOS App' },
+              { type: 'image', content: 'images/amba-app.jpg' },
+            ], this)"
+            class="active"
+          >
+            Amba IOS App
+          </li> -->
+          <!-- <li
+            onclick="showProject('Dels Lemonade IOS App', [
+              { type: 'text', content: 'Description for Dels Lemonade IOS App' },
+              { type: 'image', content: 'images/dels-app.jpg' },
+              { type: 'text', content: 'Some other details about this app...' },
+              { type: 'image', content: 'images/dels-feature.jpg' }
+            ], this)"
+          >
+            Dels Lemonade IOS App
+          </li> -->
+          <li
+            onclick="showProject('Adversarial Game Bot', [
+              { type: 'text', content: 'For a project in my AI class I created a bot that can play any \'Adversarial\' game. For the purpose of this project follows my ' +
+              'HeuristicAdversarialSearchProblem class, which required a handful of methods such as ' +
+              'getting the start state, getting the available actions and next states, check if a state was terminal, etc.'},
+              { type: 'text', content: 'I implemented minimax and alpha-beta pruning with an inputted search depth as algorithms for the bot to use, and Connect 4 and Tic-Tac-Toe for it to play.'},
+              { type: 'text', content: 'Below is a video of my roommate playing against the bot with alpha-beta pruning (depth 4). You can see the bot was kind of playing with my roommate, ' + 
+              'as he was in a spot where the bot could win at anytime for a while, but blocking him would just open another win spot. To the bot, anywhere he played was a guaranteed win (other then not blocking my roommate winning), ' +
+              'so it kept playing until it had to win.'},
+              { type: 'video', content: 'videos/connect.mp4' },
+            ], this)"
+          >
+            Adversarial Game Bot
+          </li>
+          <li
+            onclick="showProject('Alpine Advisor', [
+              { type: 'text', content: 'Apline Advisor was our final group project for my Software Engineering class. On a team of 4, I worked primarily on the frontend. '+
+              'I used Typescript to design a clean and easy to use website for the user and a seamless integration with our backend. In the backend we used an API to pull ' + 
+              'data from ski resorts, and implemented our own API in Java to pass the data to the frontend. ' + 
+              'I also created mocked data and added a mocked mode to allow thorough testing.'},
+              { type: 'text', content: 'We also implemented user authentication with the Auth0 platform, to allow user to save preference weights and values. ' },
+              { type: 'image', content: 'images/alpine/main.png' },
+              { type: 'text', content: 'Below are the preference parameters, each with a desired weight between 0 and 10, and varying values.' },
+              { type: 'image', content: 'images/alpine/preferences.png' },
+              { type: 'text', content: 'The user has the option to search by their preferences, which will use the simple alogrithm we wrote to rank the resorts with the desired parameter weights and values.' + 
+            'The user can also sort by any of the 8 parameters, or search for a specific resort. Both have dropdown menus to increase speed and accuracy of searches.' },
+              { type: 'image', content: 'images/alpine/resorts.png' },
+            ], this)"
+          >
+            Alpine Advisor
+          </li>
+
+          <!-- <li
+            onclick="showProject('Amba IOS App', [
+              { type: 'text', content: 'Description for Amba IOS App' },
+              { type: 'image', content: 'images/alpine/main.png' },
+              { type: 'text', content: 'More details about this app...' },
+              { type: 'image', content: 'images/alpine/preferences.png' },
+              { type: 'image', content: 'images/alpine/resorts.png' },
+            ], this)"
+            class="active"
+          >
+            ParkaveOS
+          </li> -->
+        </ul>
+      </div>
+
+      <div class="content">
+        <h1 class="project-title">Select a project</h1>
+        <div class="project-description">
+          <!-- Content dynamically loaded here -->
         </div>
       </div>
-    </section>
+    </div>
+
+    <script>
+      // Function to dynamically update project information with multiple text and image elements
+      function showProject(title, contentArray, element) {
+        const titleElement = document.querySelector(".project-title");
+        const descriptionElement = document.querySelector(
+          ".project-description"
+        );
+        const allProjects = document.querySelectorAll(".sidebar li");
+
+        // Update project title
+        titleElement.textContent = title;
+
+        // Clear existing content
+        descriptionElement.innerHTML = "";
+
+        // Add a break right after the title
+        descriptionElement.appendChild(document.createElement("br"));
+
+        // Loop through content array and append text or image
+        contentArray.forEach((item) => {
+          if (item.type === "text") {
+            const paragraph = document.createElement("p");
+            paragraph.textContent = item.content;
+            descriptionElement.appendChild(paragraph);
+
+            // Add a break after the text
+            descriptionElement.appendChild(document.createElement("br"));
+          } else if (item.type === "image") {
+            const image = document.createElement("img");
+            image.src = item.content;
+            image.alt = title + " image";
+            descriptionElement.appendChild(image);
+
+            // Add a break after the image
+            descriptionElement.appendChild(document.createElement("br"));
+          } else if (item.type === "video") {
+            const video = document.createElement("video");
+            video.controls = true;
+            video.style.width = "100%"; // Adjust size as needed
+            const source = document.createElement("source");
+            source.src = item.content; // Set the video source
+            source.type = "video/mp4"; // Set video type
+            video.appendChild(source); // Append source to video
+            descriptionElement.appendChild(video); // Append video to content
+          }
+        });
+
+        // Remove 'active' class from all project items
+        allProjects.forEach((project) => {
+          project.classList.remove("active");
+        });
+
+        // Add 'active' class to the clicked item
+        element.classList.add("active");
+      }
+
+      // Load the first project when the page loads
+      window.onload = function () {
+        const firstProject = document.querySelector(".sidebar li");
+        firstProject.click(); // Simulate click on the first project to load it dynamically
+      };
+    </script>
   </body>
 </html>
