@@ -173,7 +173,9 @@ li {
 .project-description img {
   width: auto; /* Adjust width */
   height: 400px; /* Fixed height */
+  max-width: 800px; /* Maximum width */
   margin: 15px 0;
+  object-fit: contain; /* Ensures the image retains its aspect ratio */
 }
 
 .project-description video {

@@ -60,7 +60,7 @@
           </li> -->
           <li
             onclick="showProject('Alpine Advisor', [
-              { type: 'text', content: 'Apline Advisor was our final group project for my Software Engineering class. On a team of 4, I worked primarily on the frontend. '+
+              { type: 'text', content: 'Alpine Advisor was our final group project for my Software Engineering class. On a team of four, I worked primarily on the frontend. '+
               'I used Typescript to design a clean and easy to use website for the user and a seamless integration with our backend. In the backend we used an API to pull ' + 
               'data from ski resorts, and implemented our own API in Java to pass the data to the frontend. ' + 
               'I also created mocked data and added a mocked mode to allow thorough testing.'},
@@ -68,21 +68,43 @@
               { type: 'image', content: 'images/alpine/main.png' },
               { type: 'text', content: 'Below are the preference parameters, each with a desired weight between 0 and 10, and varying values.' },
               { type: 'image', content: 'images/alpine/preferences.png' },
-              { type: 'text', content: 'The user has the option to search by their preferences, which will use the simple alogrithm we wrote to rank the resorts with the desired parameter weights and values.' + 
-            'The user can also sort by any of the 8 parameters, or search for a specific resort. Both have dropdown menus to increase speed and accuracy of searches.' },
+              { type: 'text', content: 'The user has the option to search by their preferences, which will use the simple algorithm we wrote to rank the resorts with the desired parameter weights and values.' + 
+            'The user can also sort by any of the 8 parameters, or search for a specific resort. Both have dropdown menus to improve search speed and accuracy.' },
               { type: 'image', content: 'images/alpine/resorts.png' },
             ], this)"
           >
             Alpine Advisor
           </li>
           <li
+            onclick="showProject('Katronic Quotes', [
+              { type: 'text', content: 'While working with Katronic Technologies, a small company that ships and installs portable flowmeters for their customers, I was tasked with automating ' +
+              'their quote summaries. They wanted to start summarizing the data from their quotes every few months to better predict how many of each part they would be quoting moving forward.' +
+              'They used a template Word Doc, in which they would input specific data, such as dates, customer name, price, etc., and get about 50-100 a month.'},
+              { type: 'text', content: 'I used the python-docx library to first read the text from the template, which was kept in a folder full of quote docs. I modified the template to reduce errors when reading the document. ' +
+              'An example is below, which looks a little messy since I cut some information out.'},
+              { type: 'image', content: 'images/kat/doc.png' },
+              { type: 'text', content: 'For each doc in the folder, after reading, I populated a dictionary with the desired information. Then, using pandas, created a DataFrame from the dictionary. ' + 
+              'I then outputted the file to a fully styled Excel sheet. I used Python\'s openpyxl library to style the Quotes sheet, add a Total sheet giving the total price quoted, and create a pivot table ' +
+              'to show how many of each part were quoted by each distributor. The outputted sheets are below, with some information blocked out.'},
+              { type: 'image', content: 'images/kat/quotes.png' },
+              { type: 'image', content: 'images/kat/pivot.png' },
+              { type: 'text', content: 'Even with the template, sometimes information would be inputted differently from time to time, causing some errors. To account for this, all the code pulling the information out of the document ' + 
+              'is in a try block. I also nested each section that tries to get a piece of information, so if any errors occur, a dictionary will still be populated with all of the information that could be gathered. If this happens at least once, ' +
+              'an Errors sheet will be created with the same style as Quotes, and this separate DataFrame will be outputted here. This not only keeps the code from terminating, but also allows for someone to easily manually input ' +
+              'the missing information. The Errors sheet is below.'},
+              { type: 'image', content: 'images/kat/errors.png' },
+            ], this)"
+          >
+            Katronic Quotes
+          </li>
+          <li
             onclick="showProject('Adversarial Game Bot', [
-              { type: 'text', content: 'For a project in my AI class I created a bot that can play any \'Adversarial\' game. For the purpose of this project follows my ' +
+              { type: 'text', content: 'For a project in my AI class I created a bot that can play any \'Adversarial\' game. Any implemented game followed my ' +
               'HeuristicAdversarialSearchProblem class, which required a handful of methods such as ' +
               'getting the start state, getting the available actions and next states, check if a state was terminal, etc.'},
               { type: 'text', content: 'I implemented minimax and alpha-beta pruning with an inputted search depth as algorithms for the bot to use, and Connect 4 and Tic-Tac-Toe for it to play.'},
-              { type: 'text', content: 'Below is a video of my roommate playing against the bot with alpha-beta pruning (depth 4). You can see the bot was kind of playing with my roommate, ' + 
-              'as he was in a spot where the bot could win at anytime for a while, but blocking him would just open another win spot. To the bot, anywhere he played was a guaranteed win (other then not blocking my roommate winning), ' +
+              { type: 'text', content: 'Below is a video of my roommate playing against the bot with alpha-beta pruning (depth 4). You can see that the bot was kind of playing with my roommate, ' + 
+              'as he was in a spot where the bot could win at anytime for a while, but blocking him would just open another win spot. To the bot, anywhere he played was a guaranteed win (other than failing to block my roommate\'s win), ' +
               'so it kept playing until it had to win.'},
               { type: 'video', content: 'videos/connect.mp4' },
             ], this)"
