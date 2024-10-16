@@ -71,6 +71,9 @@
               { type: 'text', content: 'The user has the option to search by their preferences, which will use the simple algorithm we wrote to rank the resorts with the desired parameter weights and values.' + 
             'The user can also sort by any of the 8 parameters or search for a specific resort. Both have dropdown menus to improve search speed and accuracy.' },
               { type: 'image', content: 'images/alpine/resorts.png' },
+              { type: 'text', content: 'My biggest takeaway from working on this project was the importance of creating mocked data to ensure aspects of the frontend were functioning properly. ' + 
+            'There were limited APIs that provided the information we needed, and some were pricey to use consistently. The mocked data allowed us to fully develop and test the frontend without ' +
+            'worrying about the time the API calls took, their costs, or if the API was even working at a given time.'},
             ], this)"
           >
             Alpine Advisor
@@ -78,9 +81,9 @@
           <li
             onclick="showProject('Katronic Quotes', [
               { type: 'text', content: 'While working with Katronic Technologies, a small company that ships and installs portable flowmeters for their customers, I was tasked with automating ' +
-              'their quote summaries. They wanted to start summarizing the data from their quotes every few months to better predict how many of each part they would order moving forward.' +
+              'their quote summaries. They wanted to start summarizing the data from their quotes every few months to better predict how many of each part they would order moving forward. ' +
               'They used a Microsoft Word document template, in which they would input specific data such as dates, customer name, price, etc. On average they create 50 to 100 quotes per month.'},
-              { type: 'text', content: 'The quote documents to be summarized are kept in a folder. I used the python-docx library to first read the text from the template. I modified the template to reduce errors when reading the document. ' +
+              { type: 'text', content: 'I used the python-docx library to first read the text from each quote document. I modified the template to reduce errors when reading the document. ' +
               'An modified example of a quote document is below.'},
               { type: 'image', content: 'images/kat/doc.png' },
               { type: 'text', content: 'For each doc in the folder, after reading, I populated a dictionary with the desired information. Then, using pandas, created a DataFrame from the dictionary. ' + 
@@ -93,7 +96,13 @@
               'an Errors sheet will be created with the same style as Quotes, and this separate DataFrame will be outputted here. This not only keeps the code from terminating, but also allows for someone to easily manually input ' +
               'the missing information. The Errors sheet is below.'},
               { type: 'image', content: 'images/kat/errors.png' },
-            ], this)"
+              { type: 'text', content: 'My biggest takeaway from working on this project was the importance of clear communication between myself and those who are actually using my code. ' +
+              'My code had to accomodate the needs of two people - the assistant who previously manually summarized the quotes, and the business owner who actually created the quote documents. ' +
+              'When recreating the template, I had to ensure the owner could easily input his data in the way he wanted, as he copy and pasted much of it from a \'selector\'. When creating the ' +
+              'output Excel file, I ensured it displayed the information exactly how the owner and assistant wanted. Lastly, to ensure the assistant could use the code in the future even when errors ' +
+              'come up. I walked them through the error handling I implemented, which outputted the files with incomplete information separately. We went through an example of an error and the steps ' +
+              'they could take to complete the summary regardless.'},
+              ], this)"
           >
             Katronic Quotes
           </li>
